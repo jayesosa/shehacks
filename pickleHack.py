@@ -1,19 +1,19 @@
 # IDK how to do this shit
 
-class Record
-	def __init__(self, location, age, proceedure, zipcode, gender, ethinicity, height, weight, medication, dosage,doses, painAmount, pillsUsed):
+class Record:
+	def __init__(age, procedure, zipcode, gender, race, height, weight, medication, dosage, doses):
 
-			self.location = location
+
 			self.age = age
-			self.proceedure = proceedure
+			self.procedure = procedure
 			self.zipcode = zipcode
 			self.gender = gender
-			self.ethinicity = ethinicity
+			self.race = race
 			self.height = height
 			self.weight = weight
 			self.medication = medication
 			self.dosage = dosage
-			self.doses = dosing
-			self.pillsUsed = pillsUsed
+			self.doses = doses
+			
 
 

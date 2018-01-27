@@ -159,7 +159,7 @@ option:hover{
 </style>
 <body>
 
-<form id="regForm" action="http://127.0.0.1:5000/form" , method="Post">
+<form id="regForm" action="http://127.0.0.1:5000/form" , method="post">
   <h1>Find My Dosage:</h1>
   <!-- One "tab" for each step in the form: -->
   <center><div class="tab">I am:
@@ -201,13 +201,9 @@ option:hover{
     <br>
     <br>
     <br>
-    <br>
-    <br>
-    <br>
-    <br>
     Gender
       
-    <select name="Gender">
+    <select name="gender">
       <option value="volvo">M</option>
       <option value="saab">F</option>
       <option value="fiat">Non Binary</option>
@@ -215,30 +211,18 @@ option:hover{
     </select>
    
 
-   <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
+
     <br>
     <br>
     <br>
     Ethnicity
- <select name="Race">
+ <select name="race">
       <option value="volvo">Ra</option>
       <option value="saab">Rb</option>
       <option value="fiat">Rc</option>
       <option value="audi">Rd</option>
     </select>
   
-
-     <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
     <br>
     <br>
     <br>
@@ -248,7 +232,7 @@ option:hover{
     <br>
     <br>
   Pain Killer Prescribed
-   <select name="Pain Killer Prescribed">
+   <select name="medication">
       <option value="Oliaudid">Oliaudid</option>
       <option value="Oxytonin">Oxytonin</option>
       <option value="Demerol">Demerol</option>
@@ -258,25 +242,34 @@ option:hover{
     <br>
     <br>
     <br>
-    <br>
-    <br>
-    <br>
-    <br>
+
+    <p><input placeholder="Dosage" oninput="this.className = ''" name="dosage"></p>
+
+    
     <br>
     <br>
 
+    <p><input placeholder="Doses" oninput="this.className = ''" name="doses"></p>
+
+  
+    <br>
+    <br>
+
+    <p><input placeholder="Height" oninput="this.className = ''" name="height"></p>
 
 
+    <br>
+    <br>
+
+    <p><input placeholder="Weight" oninput="this.className = ''" name="weight"></p>
+
+    <br>
+    <br>
+
+    <input type="submit" id="subBtn" value = "Submit" />
+
   </div>
-  <div class="tab">Birthday:
-    <p><input placeholder="dd" oninput="this.className = ''" name="dd"></p>
-    <p><input placeholder="mm" oninput="this.className = ''" name="nn"></p>
-    <p><input placeholder="yyyy" oninput="this.className = ''" name="yyyy"></p>
-  </div>
-  <div class="tab">Login Info:
-    <p><input placeholder="Username..." oninput="this.className = ''" name="uname"></p>
-    <p><input placeholder="Password..." oninput="this.className = ''" name="pword" type="password"></p>
-  </div>
+  
   <div style="overflow:auto;">
     <div style="float:right;">
       <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>

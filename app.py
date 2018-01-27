@@ -1,4 +1,5 @@
 import pickle
+from pickleHack import Record
 from flask import Flask, request
 app = Flask(__name__)
 
@@ -6,10 +7,16 @@ app = Flask(__name__)
 @app.route("/form", methods=["POST"])
 def form():
 	print (request.form)
-	values = request.form
-	singleRecord = Record(values['location'], values['age'], values['zipcode'],values['gender'], values['ethinicity'], values['height'], values['weight'], values['medication'],values['dosage'],values['dosing'], values['painAmount'], values['pillsUsed'])
-	records.append(singleRecord)
-	pickle.dump(records,open('records.pickle','wb'))
+	try:
+		values = request.form
+		print(values)
+		singleRecord = Record(values['age'], values['procedure'], values['zipcode'],values['gender'], values['race'], values['height'], values['weight'], values['medication'],values['dosage'],values['doses'])
+		print(singleRecord)
+		records.append(singleRecord)
+		pickle.dump(records,open('records.pickle','wb'))
+	except Exception as e:
+		print(e)
+		return "oops"
 	return ""
 
 @app.route("/")
