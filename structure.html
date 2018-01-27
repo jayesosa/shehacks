@@ -97,8 +97,33 @@ button:hover {
     position: relative;
     display: inline-block;
 }
-
+select {
+   -webkit-appearance: none; 
+   -moz-appearance: none;
+   appearance: none; 
+   background-color: #FFFFFF;
+    padding: 16px;
+    color: #000000;
+    border-radius: 8px;
+    font-size: 12px;
+    border: none;
+    cursor: pointer;
+    border: 2px solid #000000;
+    vertical-align: middle;
+     position: relative;
+    display: inline-block;     /* remove default arrow */
+}
 /* Dropdown Content (Hidden by Default) */
+select:hover{
+   background-color: #e6f2ff;
+}
+option{
+  font-size: 40px;
+}
+option:hover{
+   display: block;
+    border-radius: 10px;
+}
 .dropdown-content {
     display: none;
     position: absolute;
@@ -150,26 +175,28 @@ button:hover {
   </div>
   <div class="tab">About me:
     <p><input placeholder="Age" oninput="this.className = ''" name="age"></p>
-      <div class="dropdown">
-        <button class="dropbtn">Procedure</button>
-        <div class="dropdown-content">
-          <a href="#" onclick="nextPrev(1)" >my gallbladder removed</a>
-          <a href="#" onclick="nextPrev(1)" >a hernia fixed</a>
-          <a href="#" onclick="nextPrev(1)" >my appendix removed</a>
-          <a href="#" onclick="nextPrev(1)" >a kidney removed</a>
-          <a href="#" onclick="nextPrev(1)" >a knee fixed</a>
-          <a href="#" onclick="nextPrev(1)" >a blood clot in my heart removed</a>
-          <a href="#" onclick="nextPrev(1)" >a disk in my back fixed</a>
-          <a href="#" onclick="nextPrev(1)" >a hip replacement</a>
-          <a href="#" onclick="nextPrev(1)" >a piece of bone removed</a>
-          <a href="#" onclick="nextPrev(1)" >my uterus removed</a>
-          <a href="#" onclick="nextPrev(1)" >colon surgery</a>
-          <a href="#" onclick="nextPrev(1)" >my ovaries removed</a>
-          <a href="#" onclick="nextPrev(1)" >a heart bypass</a>
-          <a href="#" onclick="nextPrev(1)" >a broken leg bone repaired</a>
-          <a href="#" onclick="nextPrev(1)" >a broken arm bone repaired</a>
-          <a href="#" onclick="nextPrev(1)" >a c-section</a>
-      </div>
+      Procedure
+      <select name="procedure">
+        
+        <option value="volvo">my gallbladder removed</option>
+      <option value="saab">a hernia fixed</option>
+      <option value="fiat">my appendix removed</option>
+      <option value="audi">a kidney removed</option>
+    <option value="volvo">a knee fixed</option>
+      <option value="saab">a blood clot in my heart removed</option>
+      <option value="fiat">a disk in my back fixed</option>
+      <option value="audi">a hip replacement</option>
+        <option value="volvo">a piece of bone removed</option>
+      <option value="saab">my uterus removed</option>
+      <option value="fiat">my ovaries removed</option>
+      <option value="audi">a heart bypass</option>
+         <option value="volvo">a broken leg bone repaired</option>
+      <option value="saab">a broken arm bone repaired</option>
+      <option value="fiat">a c-section</option>
+          
+          
+          
+      </select>
 
     <br>
     <br>
@@ -178,16 +205,15 @@ button:hover {
     <br>
     <br>
     <br>
-
-    <div class="dropdown">
-        <button class="dropbtn">Gender</button>
-        <div class="dropdown-content">
-          <a href="#" onclick="nextPrev(1)" >M</a>
-          <a href="#" onclick="nextPrev(1)" >F</a>
-          <a href="#" onclick="nextPrev(1)" >Non Binary</a>
-          <a href="#" onclick="nextPrev(1)" >Prefer not to say</a>'
-      </div>
-  </div>
+    Gender
+      
+    <select name="Gender">
+      <option value="volvo">M</option>
+      <option value="saab">F</option>
+      <option value="fiat">Non Binary</option>
+      <option value="audi">Prefer not to say</option>
+    </select>
+   
 
    <br>
     <br>
@@ -198,16 +224,14 @@ button:hover {
     <br>
     <br>
     <br>
-
-    <div class="dropdown">
-        <button class="dropbtn">Ethnicity</button>
-        <div class="dropdown-content">
-          <a href="#" onclick="nextPrev(1)" >race a</a>
-          <a href="#" onclick="nextPrev(1)" >race b</a>
-          <a href="#" onclick="nextPrev(1)" >race c</a>
-          <a href="#" onclick="nextPrev(1)" >race d</a>'
-      </div>
-  </div>
+    Ethnicity
+ <select name="Race">
+      <option value="volvo">Ra</option>
+      <option value="saab">Rb</option>
+      <option value="fiat">Rc</option>
+      <option value="audi">Rd</option>
+    </select>
+  
 
      <br>
     <br>
@@ -220,7 +244,7 @@ button:hover {
     <br>
 
     <p><input placeholder="Zip code" oninput="this.className = ''" name="zipcode"></p>
-
+  </div>
   <div class="tab">Birthday:
     <p><input placeholder="dd" oninput="this.className = ''" name="dd"></p>
     <p><input placeholder="mm" oninput="this.className = ''" name="nn"></p>
