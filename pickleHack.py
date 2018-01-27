@@ -1,10 +1,11 @@
 # IDK how to do this shit
 
 class Record
-	def __init__(self, location, age, zipcode, gender, ethinicity, height, weight, medication, dosage,dosing, painAmount, pillsUsed):
+	def __init__(self, location, age, proceedure, zipcode, gender, ethinicity, height, weight, medication, dosage,doses, painAmount, pillsUsed):
 
 			self.location = location
 			self.age = age
+			self.proceedure = proceedure
 			self.zipcode = zipcode
 			self.gender = gender
 			self.ethinicity = ethinicity
@@ -12,8 +13,7 @@ class Record
 			self.weight = weight
 			self.medication = medication
 			self.dosage = dosage
-			self.dosing = dosing
-			self.painAmount = painAmount
+			self.doses = dosing
 			self.pillsUsed = pillsUsed
 
 
