@@ -1,7 +1,10 @@
 import pickle
 from pickleHack import Record
 from flask import Flask, request
+from bs4 import BeautifulSoup
+import requests
 app = Flask(__name__)
+
 
 #This makes an endpoint that the form will go to
 @app.route("/form", methods=["POST"])
@@ -14,10 +17,23 @@ def form():
 		print(singleRecord)
 		records.append(singleRecord)
 		pickle.dump(records,open('records.pickle','wb'))
-		html_file = open("graphs.html")
-		html_response = html_file.read()
 
-		return html_response
+		url = raw_input("www.crummy.com/software/BeautifulSoup/")
+
+		r  = requests.get("http://" +url)
+
+		data = r.text
+
+		soup = BeautifulSoup(data)
+
+		for link in soup.find_all('a'):
+		    print(link.get('href'))
+
+		return soup
+		# html_file = open("graphs.html")
+		# html_response = html_file.read()
+
+		# return html_response
 	except Exception as e:
 		print(e)
 		return "oops"
