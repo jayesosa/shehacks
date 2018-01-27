@@ -82,11 +82,14 @@ button:hover {
 }
 .dropbtn {
     background-color: #FFFFFF;
-    color: white;
     padding: 16px;
-    font-size: 16px;
+    color: #000000;
+    border-radius: 8px;
+    font-size: 12px;
     border: none;
     cursor: pointer;
+    border: 2px solid #000000;
+    vertical-align: middle;
 }
 
 /* The container <div> - needed to position the dropdown content */
@@ -99,7 +102,9 @@ button:hover {
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #f9f9f9;
+    font-size: 12px;
+    border-radius: 8px;
+    background-color: #ffffff;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
@@ -114,16 +119,17 @@ button:hover {
 }
 
 /* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: #f1f1f1}
+.dropdown-content a:hover {background-color: #e6f2ff}
 
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {
     display: block;
+    border-radius: 8px;
 }
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown:hover .dropbtn {
-    background-color: #3e8e41;
+    background-color: #e6f2ff;
 }
 </style>
 <body>
@@ -131,14 +137,15 @@ button:hover {
 <form id="regForm" action="/action_page.php">
   <h1>Find My Dosage:</h1>
   <!-- One "tab" for each step in the form: -->
-  <div class="tab">I am:
+  <center><div class="tab">I am:
     <div class="dropdown">
 		  <button class="dropbtn"></button>
 		  <div class="dropdown-content">
 		    <a href="#" onclick="nextPrev(1)" >in the hospital after surgery</a>
 		    <a href="#" onclick="nextPrev(1)" >home after surgery</a>
 		  </div>
-		</div>
+
+		</div></center>
    
   </div>
   <div class="tab">About me:
@@ -159,7 +166,7 @@ button:hover {
     <br>
 
     <div class="dropdown">
-        <button class="dropbtn"></button>
+        <button class="dropbtn">Gender</button>
         <div class="dropdown-content">
           <a href="#" onclick="nextPrev(1)" >M</a>
           <a href="#" onclick="nextPrev(1)" >F</a>
@@ -179,7 +186,7 @@ button:hover {
     <br>
 
     <div class="dropdown">
-        <button class="dropbtn"></button>
+        <button class="dropbtn">Ethnicity</button>
         <div class="dropdown-content">
           <a href="#" onclick="nextPrev(1)" >race a</a>
           <a href="#" onclick="nextPrev(1)" >race b</a>
