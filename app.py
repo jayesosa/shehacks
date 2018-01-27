@@ -14,7 +14,10 @@ def form():
 		print(singleRecord)
 		records.append(singleRecord)
 		pickle.dump(records,open('records.pickle','wb'))
-		return "yay"
+		html_file = open("graphs.html")
+		html_response = html_file.read()
+
+		return html_response
 	except Exception as e:
 		print(e)
 		return "oops"
