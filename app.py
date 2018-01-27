@@ -2,7 +2,7 @@ import pickle
 from pickleHack import Record
 from flask import Flask, request
 from bs4 import BeautifulSoup
-import requests
+import urllib2
 app = Flask(__name__)
 
 
@@ -18,16 +18,12 @@ def form():
 		records.append(singleRecord)
 		pickle.dump(records,open('records.pickle','wb'))
 
-		url = raw_input("www.crummy.com/software/BeautifulSoup/")
+		url = urllib2.urlopen("https://en.wikipedia.org/wiki/Egypt").read()
 
-		r  = requests.get("http://" +url)
-
-		data = r.text
-
-		soup = BeautifulSoup(data)
+		soup = BeautifulSoup(url)
 
 		for link in soup.find_all('a'):
-		    print(link.get('href'))
+		     print(link.get('href'))
 
 		return soup
 		# html_file = open("graphs.html")
