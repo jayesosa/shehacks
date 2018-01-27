@@ -1,7 +1,7 @@
 # IDK how to do this shit
 
 class Record:
-	def __init__(age, procedure, zipcode, gender, race, height, weight, medication, dosage, doses):
+	def __init__(self, age, procedure, zipcode, gender, race, height, weight, medication, dosage, doses):
 
 
 			self.age = age

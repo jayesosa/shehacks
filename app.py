@@ -14,6 +14,7 @@ def form():
 		print(singleRecord)
 		records.append(singleRecord)
 		pickle.dump(records,open('records.pickle','wb'))
+		return "yay"
 	except Exception as e:
 		print(e)
 		return "oops"
