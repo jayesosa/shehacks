@@ -1,10 +1,11 @@
 import pickle
 from pickleHack import Record
-from flask import Flask, request
+from flask import Flask, request, render_template
 from bs4 import BeautifulSoup
 import urllib
 import subprocess
 from subprocess import call
+from flask import make_response
 
 
 app = Flask(__name__)
@@ -36,8 +37,10 @@ def form():
 			if cell[0].strip().upper() == singleRecord.procedure.strip().upper():
 				for med in opioidString:	
 					if med.strip().upper() == singleRecord.medication.strip().upper():
-						return  "<br></br><br></br><br></br><center>Here are your results...<br></br><br></br>If you are no longer in pain, but still have extra medication,<br></br> you can visit " + "http://disposemymeds.org/medicine-disposal-locator/" + " to find the closest facility to safely dispense of them.</center><br></br><br></br><br></br> This is your procedure and the amount of pills you SHOULD be prescribed after surgery:    " + cell[0] + " , " + med + " , " + cell[1] + " tablets."
-
+						#return  "<br></br><br></br><br></br><center>Here are your results...<br></br><br></br>If you are no longer in pain, but still have extra medication,<br></br> you can visit " + "http://disposemymeds.org/medicine-disposal-locator/" + " to find the closest facility to safely dispense of them.</center><br></br><br></br><br></br> This is your procedure and the amount of pills you SHOULD be prescribed after surgery:    " + cell[0] + " , " + med + " , " + cell[1] + " tablets."
+						response = make_response(render_template('graphs.html', cell=cell, med=med))
+						
+						return response
 						# pro = cell[0]  
 						# medi = med
 						# s = """ <center> Here are your results...</center
@@ -62,12 +65,6 @@ def form():
 						
 						#return render_template('datastyles.html' % data )
 
-		#create another file and create button to click here
-		#return "http://disposemymeds.org/medicine-disposal-locator/"
-		# html_file = open("graphs.html")
-		# html_response = html_file.read()
-
-		# return html_response
 	except Exception as e:
 		print(e)
 		return "oops"
