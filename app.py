@@ -18,14 +18,14 @@ def form():
 		records.append(singleRecord)
 		pickle.dump(records,open('records.pickle','wb'))
 
-		url = urllib2.urlopen("https://en.wikipedia.org/wiki/Egypt").read()
+		url = urllib2.urlopen("https://opioidprescribing.info/").read()
 
-		soup = BeautifulSoup(url)
+		soup = BeautifulSoup(url, "html.parser")
+		print("something coming up")
+		print(soup.select("#chart"))
+		    # print(link.get('href'))
 
-		for link in soup.find_all('a'):
-		     print(link.get('href'))
-
-		return soup
+		return "good"
 		# html_file = open("graphs.html")
 		# html_response = html_file.read()
 
