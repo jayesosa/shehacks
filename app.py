@@ -36,8 +36,31 @@ def form():
 			if cell[0].strip().upper() == singleRecord.procedure.strip().upper():
 				for med in opioidString:	
 					if med.strip().upper() == singleRecord.medication.strip().upper():
-						#print med
-						return cell[0] + med
+						return  "<br></br><br></br><br></br><center>Here are your results..:\nIf you are no longer in pain, but still have extra medication, you can visit " + "http://disposemymeds.org/medicine-disposal-locator/" + " to find the closest place to safely dispense of them.</center><br></br><br></br><br></br> This is your procedure and the amount of pills you SHOULD be prescribed after surgery:    " + cell[0] + " , " + med + " , " + cell[1]
+
+						# pro = cell[0]  
+						# medi = med
+						# s = """ <center> Here are your results...</center
+						# Procedure = {0},
+						# Medication = {1}
+						# """
+						
+
+						# return """ 
+						# 	<body>
+						# 	<br></br>
+						# 	<br></br>
+						# 	<br></br>
+						# 	<br></br>
+						# 	</body>
+						# 	<center> Here are your results...</center
+
+						# """
+						# cell[0] + med
+
+						
+						
+						#return render_template('datastyles.html' % data )
 
 		#create another file and create button to click here
 		#return "http://disposemymeds.org/medicine-disposal-locator/"
@@ -49,6 +72,7 @@ def form():
 		print(e)
 		return "oops"
 	return ""
+
 
 @app.route("/")
 def hello():
