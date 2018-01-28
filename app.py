@@ -28,7 +28,13 @@ def form():
 		f = urllib.urlopen("http://datawrapper.dwcdn.net/aL51p/3/")
 		myfile = f.read()
 		print myfile
+		mydata = myfile.split("/n")
+		for line in mydata:
+			cell = line.split("/t")
+			if cell[0] == singleRecord.procedure:
+				print line
 
+		# if singleRecord.procedure = 
 		#split myfile by /n
 		#split each line by /t
 		#we have 13 rows
