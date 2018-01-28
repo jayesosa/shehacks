@@ -28,10 +28,14 @@ def form():
 		f = urllib.urlopen("http://datawrapper.dwcdn.net/aL51p/3/")
 		myfile = f.read()
 		print myfile
-		return f.read()
 
-		    # print(link.get('href'))
+		#split myfile by /n
+		#split each line by /t
+		#we have 13 rows
+		#check singlerecord.procedure == xxx
+		#then return that row 
 
+		#create another file and create button to click here
 		return "http://disposemymeds.org/medicine-disposal-locator/"
 		# html_file = open("graphs.html")
 		# html_response = html_file.read()
