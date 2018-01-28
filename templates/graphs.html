@@ -1,6 +1,89 @@
-<center>
-<br></br><br></br><br></br>
-Here are your results...<br></br><br></br>If you are no longer in pain, but still have extra medication,<br></br> you can go <a href="http://disposemymeds.org/medicine-disposal-locator/">here</a> to find the closest facility to safely dispense of them.
-<br></br><br></br><br></br> 
-This is your procedure and the amount of pills you SHOULD be prescribed after surgery: {{cell[0]}} {{med}} {{cell[1]}} tablets.
-</center>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.bundle.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
+<style>
+  body {
+    background-color: #85C1E9;
+  }
+
+  .bodytext{
+    background-color: #ffffff;
+    margin: 100px auto;
+    font-family: Raleway;
+    padding: 80px;
+    width: 70%;
+    min-width: 300px;
+    font-size: 14pt;
+  }
+</style>
+<body>
+  <table >
+    <tr>
+      <td colspan="6">
+        <div class = "bodytext">
+        	<br></br>
+        	Here are your results...<br></br><br></br>If you are no longer in pain, but still have extra medication,<br></br> you can go <b><a href="http://disposemymeds.org/medicine-disposal-locator/">here</a></b> to find the closest facility to safely dispense of them.
+        	<br></br>
+        	After your procedure (<b>{{cell[0]}}</b>) you should consider taking up <b>{{cell[1]}}</b> tablets of <b>{{med}}</b>.
+        	<br>
+          <br>
+        	Or <b>{{tablets}} tablets</b> of your current dosage. 
+          
+        </div>
+      </td>
+      <td colspan = "6">
+        <div class = "bodytext">
+          <div width="400px" height="400px">
+            <canvas id="myChart" width="400px" height="400px"></canvas>
+          </div>
+        </div>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
+
+
+<script>
+var ctx = document.getElementById("myChart").getContext('2d');
+var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+        datasets: [{
+            label: '# of Votes',
+            data: [12, 19, 3, 5, 2, 3],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255,99,132,1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero:true
+                }
+            }]
+        }
+    }
+});
+</script>
