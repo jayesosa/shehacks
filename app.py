@@ -36,7 +36,7 @@ def form():
 			if cell[0].strip().upper() == singleRecord.procedure.strip().upper():
 				for med in opioidString:	
 					if med.strip().upper() == singleRecord.medication.strip().upper():
-						return  "<br></br><br></br><br></br><center>Here are your results..:\nIf you are no longer in pain, but still have extra medication, you can visit " + "http://disposemymeds.org/medicine-disposal-locator/" + " to find the closest place to safely dispense of them.</center><br></br><br></br><br></br> This is your procedure and the amount of pills you SHOULD be prescribed after surgery:    " + cell[0] + " , " + med + " , " + cell[1]
+						return  "<br></br><br></br><br></br><center>Here are your results...<br></br><br></br>If you are no longer in pain, but still have extra medication,<br></br> you can visit " + "http://disposemymeds.org/medicine-disposal-locator/" + " to find the closest facility to safely dispense of them.</center><br></br><br></br><br></br> This is your procedure and the amount of pills you SHOULD be prescribed after surgery:    " + cell[0] + " , " + med + " , " + cell[1] + " tablets."
 
 						# pro = cell[0]  
 						# medi = med
