@@ -2,7 +2,11 @@ import pickle
 from pickleHack import Record
 from flask import Flask, request
 from bs4 import BeautifulSoup
-import urllib2
+import urllib
+import subprocess
+from subprocess import call
+
+
 app = Flask(__name__)
 
 
@@ -18,14 +22,17 @@ def form():
 		records.append(singleRecord)
 		pickle.dump(records,open('records.pickle','wb'))
 
-		url = urllib2.urlopen("https://opioidprescribing.info/").read()
 
-		soup = BeautifulSoup(url, "html.parser")
-		print("something coming up")
-		print(soup.select("#chart"))
+		class AppURLopener(urllib.FancyURLopener):version = "Mozilla/5.0"
+		urllib._urlopener = AppURLopener()
+		f = urllib.urlopen("http://datawrapper.dwcdn.net/aL51p/3/")
+		myfile = f.read()
+		print myfile
+		return f.read()
+
 		    # print(link.get('href'))
 
-		return "good"
+		return "http://disposemymeds.org/medicine-disposal-locator/"
 		# html_file = open("graphs.html")
 		# html_response = html_file.read()
 
